@@ -1,0 +1,869 @@
+@font-face {
+    font-family: 'ebgaramond-variablefont_wght';
+    src: url('../tipos/ebgaramond-variablefont_wght.woff2') format('woff2'),
+        url('../tipos/ebgaramond-variablefont_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oranienbaum-regular';
+    src: url('../tipos/oranienbaum-regular.woff2') format('woff2'),
+        url('../tipos/oranienbaum-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'ebgaramond-variablefont_wght';
+}
+
+.clear {
+    clear: both;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+body {
+
+    margin: 0%;
+}
+#flecha-arriba{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    z-index: 10000;
+    opacity: 60%;
+    transition: all ease 0.5s;
+    display: none;
+}
+#flecha-arriba:hover{
+    opacity: 100%;
+}
+.centrado {
+    width: 80%;
+    max-width: 1020px;
+    margin: auto;
+}
+
+.centrado-menu {
+    width: 80%;
+    max-width: 1020px;
+    margin: auto;
+}
+
+.fixed {
+    background-color: rgba(0, 0, 0, 0.432);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+
+.titulares {
+    font-size: 40px;
+    font-family: 'oranienbaum-regular';
+    margin-top: 0%;
+    margin-bottom: 0%;
+font-weight: bolder;
+}
+
+#menu-desplegado {
+    display: block;
+    transition: all ease 1s;
+    height: 40px;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+#menu-desplegado ul {
+    padding: 0%;
+    margin: 0px;
+    list-style-type: none;
+}
+
+#menu-desplegado ul li a {
+    display: block;
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'oranienbaum-regular';
+    font-weight: 100;
+    transition: all ease 0.2s;
+}
+#menu-desplegado ul li a:hover{
+    color: #9e9e9e;
+    text-decoration: none;
+
+}
+#menu-plegado {
+    display: none;
+    transition: all ease 1s;
+    height: 40px;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+#menu-plegado ul {
+    padding: 0%;
+    margin: 0px;
+    list-style-type: none;
+}
+
+#menu-plegado ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'oranienbaum-regular';
+    font-weight: 100;
+    font-size: 25px;
+    transition: all ease 0.2s;
+    height: 40px;
+}
+#menu-plegado ul li a:hover{
+    color: #9e9e9e;
+    text-decoration: none;
+}
+.alto{
+    height: 200px !important;
+}
+
+.etiquetas-peques {
+    height: 40px;
+}
+
+#loguito {
+    height: 40px;
+    width: auto;
+    margin: 0%;
+    display: block;
+    margin: auto;
+}
+
+header {
+    position: relative;
+    padding-top: 12%;
+    padding-bottom: 10%;
+    overflow: hidden;
+    text-align: center;
+    height: 100vh;
+
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -100;
+}
+
+#logo {
+    width: 650px;
+    margin: auto;
+}
+
+#titulo-disco {
+    margin-top: 220px;
+    margin-bottom: 0%;
+    font-size: 65px;
+    color: white;
+    font-family: 'oranienbaum-regular';
+    font-weight: lighter;
+}
+
+#biografia {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 18px;
+}
+.miembros-responsive{
+    display: none;
+}
+
+/*GALERIA LIGHTBOX*/
+
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+    padding: 2px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tz-gallery .lightbox:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: 'Glyphicons Halflings';
+    content: '\e003';
+    pointer-events: none;
+    z-index: 9000;
+    transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(75, 75, 75, 0.507);
+    content: '';
+    transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+    opacity: 1;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+/* FIN GALERIA LIGHTBOX*/
+
+
+#bio {
+    margin-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 100px;
+
+}
+
+#discografia {
+    text-align: center;
+}
+
+#carrousel {
+    padding-top: 100px;
+    background-image: url(../img/discografia/carrouselfondo.jpg);
+}
+
+.contenedor-carrousel{
+    margin-top: 60px;
+}
+
+/* Slider */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* Fin del Slider */
+
+#carrousel-bis {
+    background-image: url(../img/discografia/nuevoalbumfondo.jpg);
+    margin: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/*DISCO QUE GIRA*/
+
+
+
+.square-flip {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+
+    -webkit-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -ms-transform: perspective(1000px);
+    transform: perspective(1000px);
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    /*border:1px solid #efefef;*/
+
+    position: relative;
+    float: left;
+    margin: 20px;
+
+}
+
+.square-flip {
+    width: 400px;
+    height: 400px;
+}
+
+.square,
+.square2 {
+    width: 100%;
+    height: 100%;
+}
+
+.square {
+
+    background-size: cover;
+    background-position: center center;
+
+    -ms-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.square-flip .square {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.square-flip:hover .square {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+}
+
+
+.square2 {
+
+    background-size: cover;
+    background-position: center center;
+
+    -ms-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.square-flip .square2 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.square-flip:hover .square2 {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+/*Square content*/
+.square-container {
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+
+    -ms-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+
+
+    -webkit-transform: translateY(-50%) translateX(0px) scale(1);
+    -ms-transform: translateY(-50%) translateX(0px) scale(1);
+    transform: translateY(-50%) translateX(0px) scale(1);
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+.square-flip:hover .square-container {
+
+    -webkit-transform: translateY(-50%) translateX(-650px) scale(.88);
+    -ms-transform: translateY(-50%) translateX(-650px) scale(.88);
+    transform: translateY(-50%) translateX(-650px) scale(.88);
+    transform-style: preserve-3d;
+
+}
+
+.square-container2 {
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+
+    -ms-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5, .3, .3, 1);
+
+
+    -webkit-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+    -ms-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+    transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+.square-flip:hover .square-container2 {
+
+    -webkit-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    -ms-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    transform-style: preserve-3d;
+}
+
+/*Elements*/
+.flip-overlay {
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.align-center {
+    margin: 0 auto;
+}
+
+/*ADD SHADOWS OPTIONAL*/
+.square-flip .square .boxshadow,
+.square-flip .square .textshadow,
+.square-flip .square2 .boxshadow,
+.square-flip .square2 .textshadow {
+    -ms-transition: 0.60s;
+    transition: 0.60s;
+    -webkit-transition: 0.60s;
+}
+
+.square-flip .square .boxshadow {
+    -webkit-box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+}
+
+.square-flip .square .textshadow {
+    -webkit-text-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    text-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+}
+
+.square-flip:hover .square .boxshadow,
+.square-flip:hover .square .textshadow {
+    -webkit-box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    -moz-box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+}
+
+
+.square-flip .square2 .boxshadow {
+    -webkit-box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    -moz-box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+}
+
+.square-flip .square2 .textshadow {
+    -webkit-text-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    -moz-text-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+    text-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0.0);
+}
+
+.square-flip:hover .square2 .boxshadow,
+.square-flip:hover .square2 .textshadow {
+    -webkit-box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+    box-shadow: 24px 42px 58px -8px rgba(0, 0, 0, 0.3);
+}
+
+
+/*You can delete this style*/
+.centerflipcards {
+    display: block;
+    width: 1330px;
+    height: 440px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.centerflipcards p {
+    font-family: "Open Sans";
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.centerflipcards {
+    width: 48%;
+    float: left;
+    margin: 1%;
+}
+
+
+/*FIN DEL DISCO QUE GIRA*/
+
+#infodisco {
+    margin-right: 2%;
+    margin-left: 4%;
+    width: 44%;
+    float: right;
+    text-align: center;
+    font-size: 19px;
+    color: black;
+}
+#multimedia {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.contenido-embebido{
+    width: 48%;
+    margin: 1%;
+    float: left;
+    margin-top: 60px;
+}
+#contacto{
+    background-image: url(../img/discografia/fondo-contacto.jpg);
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 100px;
+
+}
+#redessociales{
+    margin-top: 20px;
+}
+.iconoredes{
+    font-size: 50px;
+    margin: 2%;
+    color: white;
+    text-shadow: #757575 2px 2px 0px;
+    transition: all ease 0.2s;
+}
+.iconoredes:hover{
+    color: #35373a;
+}
+.tarjeta-contacto{
+    margin-top: 20px;
+}
+.quien{
+    margin-bottom: 10px;
+}
+.nombre{
+    margin-top: 0px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.via-contacto{
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight:300;
+}
+.mapa{
+    margin-top: 100px;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+}
+footer{
+    background-color: black;
+    height: 40px;
+}
+#footer1{
+    float: left;
+    margin: 0%;
+    line-height: 40px;
+    color: white;
+}
+#footer2{
+    float: right;
+    margin: 0%;
+    line-height: 40px;
+    color: white;
+}
+
+@media screen and (max-width: 1020px) {
+    .centrado{
+        width: 85%;
+    }
+    .centrado-menu{
+        width: 100%;
+    }
+    #logo{
+        width: 450px;
+        margin-top: 150px;
+    }
+    #titulo-disco{
+        margin-top: 100px;
+        font-size: 45px;
+    }
+    .titulares {
+        font-size: 30px;
+    }
+    #bio {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    #infodisco{
+        float: right;
+        width: 35%;
+        font-size: 17px;
+    }
+    .centerflipcards{
+        margin-top: 80px;
+    }
+    .square-flip {
+        width: 350px;
+        height: 350px;
+    }
+    .contenido-embebido{
+        width: 100%;
+        margin: 0%;
+        float: none;
+        margin-top: 60px;
+    }
+}
+@media screen and (max-width: 720px) {
+    .centrado{
+        width: 98%;
+    }
+    #menu-desplegado{
+        display: none;
+    }
+    #menu-plegado{
+        display: block;
+    }
+    #flecha-arriba{
+        display: block;
+    }
+    #logo{
+        width: 300px;
+        margin-top: 200px;
+    }
+    #titulo-disco{
+        margin-top: 100px;
+        font-size: 35px;
+    }
+    .titulares {
+        font-size: 20px;
+    }
+    .container.gallery-container{
+        display: none;
+    }
+    .miembros-responsive{
+        display: block;
+        margin-top: 40px;
+    }
+    #bio {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    #infodisco{
+        margin-right: 0%;
+        margin-left: 0%;
+        width: 100%;
+        float: none;
+        text-align: center;
+        font-size: 19px;
+    }
+    .centerflipcards{
+        margin: auto;
+        width: 100%;
+        margin-top: 0px;
+        float: none;
+    }
+    .square-flip {
+        width: 400px;
+        height: 400px;
+        position:static;
+        float: none;
+        margin: auto;
+    }
+}

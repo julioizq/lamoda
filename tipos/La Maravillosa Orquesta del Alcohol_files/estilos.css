@@ -1,0 +1,148 @@
+
+@font-face {
+    font-family: 'ebgaramond-variablefont_wght';
+    src:url('../tipos/ebgaramond-variablefont_wght.woff2') format('woff2'),
+        url('../tipos/ebgaramond-variablefont_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oranienbaum-regular';
+    src:url('../tipos/oranienbaum-regular.woff2') format('woff2'),
+        url('../tipos/oranienbaum-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    box-sizing: border-box; 
+    font-family: 'ebgaramond-variablefont_wght';
+}
+.clear{
+    clear: both;
+}
+img{
+    display: block;
+    width: 100%;
+}
+body{
+   
+    margin: 0%;
+}
+.centrado{
+    width: 80%;
+    max-width: 1020px;
+    margin: auto;
+}
+.fixed{
+    background-color: rgba(0, 0, 0, 0.432);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+.titulares{
+    font-size: 40px;
+    font-family: 'oranienbaum-regular';
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+#menu{
+    transition: all ease 1s;
+}
+nav{
+    height: 40px;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+nav ul{
+    padding: 0%;
+    margin: 0px;
+    list-style-type: none;
+}
+nav ul li a{
+    display: block;
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'oranienbaum-regular';
+    font-weight:100;
+}
+.etiquetas-peques{
+    height: 40px;
+}
+#loguito{
+    height: 40px;
+    width: auto;
+    margin: 0%;
+    display: block;
+    margin: auto;
+}
+header{
+    position: relative;
+    padding-top: 12%;
+    padding-bottom: 10%;
+    overflow: hidden;
+    text-align: center;
+
+}
+video {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: -100;
+}
+#logo{
+    width: 650px;
+    margin: auto;
+}
+h1{
+    margin-top: 120px;
+    margin-bottom: 0%;
+    font-size: 65px;
+    color: white;
+    font-family: 'oranienbaum-regular';
+    font-weight: lighter;
+}
+#biografia{
+    text-align: center;
+    padding-top: 100px;
+}
+#imagen-grupo{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+#miembros{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+.integrante{
+    width: 23%;
+    margin: 1%;
+    float: left;
+}
+#bio{
+    margin-top: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+#discografia{
+    text-align: center;
+    padding-top: 80px;
+}
+#carrousel{
+
+    background-image: url(../img/discografia/carrouselfondo.jpg);
+}
